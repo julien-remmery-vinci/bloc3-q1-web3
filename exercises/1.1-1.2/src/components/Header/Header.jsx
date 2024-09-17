@@ -1,6 +1,11 @@
+import LOGO from './images/LOGO HE VINCI.png';
+
 const Header = (props) => {
   return (
-    <h1>{props.course}</h1>
+    <>
+      <img src={LOGO} />
+      <h1>{props.course}</h1>
+    </>
   );
 };
 
