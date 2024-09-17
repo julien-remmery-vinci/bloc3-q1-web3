@@ -1,6 +1,6 @@
-import { Part } from "../Part/Part";
+import Part from "components/Part/Part";
 
-export const Content = (props) => {
+const Content = (props) => {
   return (
     <>
       <Part part={props.exercises[0].part} exercises={props.exercises[0].exercises} />
@@ -9,3 +9,5 @@ export const Content = (props) => {
     </>
   );
 };
+
+export default Content
