@@ -1,30 +1,6 @@
-const Header = (props) => {
-  return (
-    <h1>{props.course}</h1>
-  )
-}
-
-const Part = (props) => {
-  return (
-    <p>{`${props.part} ${props.exercises}`}</p>
-  )
-}
-
-const Content = (props) => {
-  return (
-    <>
-      <Part part={props.exercises[0].part} exercises={props.exercises[0].exercises} />
-      <Part part={props.exercises[1].part} exercises={props.exercises[1].exercises} />
-      <Part part={props.exercises[2].part} exercises={props.exercises[2].exercises} />
-    </>
-  )
-}
-
-const Total = (props) => {
-  return (
-    <p>{`Number of exercises ${props.exercises}`}</p>
-  )
-}
+import { Header } from "./components/Header/Header"
+import { Content } from "./components/Content/Content"
+import { Total } from "./components/Total/Total"
 
 const App = () => {
   const course = 'Half Stack application development'
