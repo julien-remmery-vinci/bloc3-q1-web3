@@ -1,4 +1,5 @@
-import FeedbackButtons from "components/FeedbackButtons";
+import Feedback from "components/Feedback";
+import Loading from "components/Loading";
 import Stats from "components/Stats";
 import { useState } from "react";
 
@@ -7,6 +8,15 @@ const App = () => {
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
+  const [loading, setLoading] = useState(true);
+
+  setTimeout(() => {
+      setLoading(false);
+  }, 3000);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   const handleGood = () => {
     const newGood = good + 1;
@@ -26,10 +36,9 @@ const App = () => {
   return (
     <div>
       <div>
-        <h1>Give feedback</h1>
-        <FeedbackButtons handleGood={handleGood} handleNeutral={handleNeutral} handleBad={handleBad} />
+        <Feedback handleGood={handleGood} handleNeutral={handleNeutral} handleBad={handleBad} />
+        <Stats good={good} neutral={neutral} bad={bad} />
       </div>
-      <Stats good={good} neutral={neutral} bad={bad} />
     </div>
   );
 };
