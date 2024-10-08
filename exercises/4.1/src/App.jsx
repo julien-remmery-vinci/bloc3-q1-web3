@@ -46,6 +46,21 @@ const App = () => {
      })
   }
 
+  const handleUpdate = (event) => {
+    const id = event.target.value
+    const personToUpdate = persons.find(person => person.id === id);
+    if (personToUpdate) {
+      const updatedPerson = { ...personToUpdate, name: newName, number: newNumber };
+      phonebookService
+        .update(id, updatedPerson)
+        .then(response => {
+          if (response.status === 200) {
+            setPersons(persons.map(person => person.id === id ? updatedPerson : person));
+          }
+        });
+    }
+  };
+
   const handleDelete = (event) => {  
     const id = event.target.value;  
     phonebookService
@@ -74,7 +89,11 @@ const App = () => {
       <h2>Numbers</h2>
       <ul style={{listStyle: "none"}}>
         {persons.map((person, index) => (
-          <li key={index}>{person.name} {person.number} <button value={person.id} onClick={handleDelete}>delete</button></li>
+          <li key={index}>
+            {person.name} {person.number} 
+            <button value={person.id} onClick={handleUpdate}>update</button>
+            <button value={person.id} onClick={handleDelete}>delete</button>
+          </li>
         ))}
       </ul>
     </div>
