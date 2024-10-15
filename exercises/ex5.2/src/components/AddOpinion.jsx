@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { Context } from "contexts/opinionsContext";
+import { OpinionsContext } from "contexts/opinionsContext";
 
 const AddOpinion = () => {
-    const { addOpinion } = useContext(Context)
+    const { addOpinion } = useContext(OpinionsContext)
 
     const handleClick = (e) => {
         e.preventDefault()

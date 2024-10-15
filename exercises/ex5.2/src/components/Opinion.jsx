@@ -1,8 +1,8 @@
 import { useContext } from "react"
-import { Context } from "contexts/opinionsContext"
+import { OpinionsContext } from "contexts/opinionsContext"
 
 const Opinion = ({id, opinion, votes}) => {
-    const {addVote} = useContext(Context)
+    const {addVote} = useContext(OpinionsContext)
 
     const handleClick = () => {
         addVote(id)

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { v4 as uuid } from 'uuid';
 
-const Context = React.createContext(null)
+const OpinionsContext = React.createContext(null)
 
-const ProviderWrapper = (props) => {
+const OpinionsProviderWrapper = (props) => {
 
     const [opinions, setOpinions] = useState([])
 
@@ -38,12 +38,12 @@ const ProviderWrapper = (props) => {
         addVote,
     }
     
-    return <Context.Provider value={exposedValue}>
+    return <OpinionsContext.Provider value={exposedValue}>
         { props.children }
-    </Context.Provider>    
+    </OpinionsContext.Provider>    
 }
     
 export {    
-    Context,
-    ProviderWrapper,    
+    OpinionsContext,
+    OpinionsProviderWrapper,    
 }

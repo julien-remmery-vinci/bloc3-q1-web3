@@ -1,9 +1,9 @@
-import { Context } from "contexts/opinionsContext";
+import { OpinionsContext } from "contexts/opinionsContext";
 import { useContext } from "react";
 import Opinion from "./Opinion";
 
 const OpinionsList = () => {
-    const { sortedOpinions } = useContext(Context)
+    const { sortedOpinions } = useContext(OpinionsContext)
     return (
         <ul>
             {sortedOpinions.map(opinion => (

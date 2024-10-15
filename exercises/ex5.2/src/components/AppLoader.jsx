@@ -1,11 +1,14 @@
-import { ProviderWrapper } from "contexts/opinionsContext";
-import App from "components/App.jsx";
+import { OpinionsProviderWrapper } from "contexts/opinionsContext";
+import { ThemeProviderWrapper } from "contexts/themeContext";
+import App from "components/App/App.jsx";
 
 const AppLoader= () => {
   return (
-    <ProviderWrapper >
-      <App />
-    </ProviderWrapper >
+    <OpinionsProviderWrapper >
+      <ThemeProviderWrapper>
+        <App />
+      </ThemeProviderWrapper>
+    </OpinionsProviderWrapper >
   )
 }
 
